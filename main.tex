@@ -1,0 +1,68 @@
+\documentclass[mphil,12pt]{hkuthesis}
+
+% Dummy text
+\usepackage{lipsum}
+
+% Images
+\usepackage{graphicx}
+\graphicspath{{contents/images/}}
+
+% Table appearance
+\usepackage{booktabs}
+
+% Mathematical facilities
+\usepackage{amsmath}
+
+% Numbering figures, tables, and equations without chapter number
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}
+
+% Cross-referencing
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+% Bibliography
+\usepackage[style=ieee]{biblatex}
+\addbibresource{contents/backmatter/references.bib}
+
+% Thesis and author metadata
+\title{Insert the Title of Your Thesis Here}
+\author{Insert Your Name Here}
+\qualifications{B.Sc. \emph{H.K.}; M.A. \emph{C.U.H.K.}}
+\date{August 2018}
+
+\begin{document}
+
+% Font matter
+\begin{frontmatter}
+	\abstract
+	\titlepage
+	\dedication 		% Optional
+	\declaration
+	\acknowledgements	% Optional
+	\tableofcontents
+	\listoffigures		% Optional
+	\listoftables		% Optional
+\end{frontmatter}
+
+% Chapters
+\begin{chapters}
+	\input{contents/chapters/introduction}
+	\input{contents/chapters/background}
+	\input{contents/chapters/more-to-follow}
+\end{chapters}
+
+% Appendices
+\begin{appendices}
+	\input{contents/appendices/just-an-appendix}
+	\input{contents/appendices/yet-another-appendix}
+\end{appendices}
+
+% Back matter
+\begin{backmatter}
+	\printbibliography[heading=bibintoc,title=References]
+\end{backmatter}
+
+\end{document}
