@@ -6,7 +6,7 @@
 %%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{hkuthesis}[2018/06/12 v1.0.0 HKU MPhil and PhD Thesis Class]
+\ProvidesClass{hkuthesis}[2019/02/07 v1.1.0 HKU MPhil and PhD Thesis Class]
 \def\HKU{The University of Hong Kong}
 
 
@@ -88,7 +88,8 @@
 }
 
 % Abstract
-\newcommand{\abstract}{
+\RequirePackage{xifthen}
+\newcommand{\abstract}[1][]{
 	\pagestyle{empty}
 	\pagenumbering{alph}
 	\begin{center}
@@ -109,7 +110,9 @@
 		\end{spacing}
 	\end{center}
 	\vspace{2em}
-	\input{contents/frontmatter/abstract}
+	\input{contents/frontmatter/abstract} \\
+	\newline
+	\ifthenelse{\isempty{#1}}{}{\rightline{(#1 words)}}
 	\vspace*{\fill}
 }
 

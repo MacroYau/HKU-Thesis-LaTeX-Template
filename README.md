@@ -32,7 +32,7 @@ You should be able to produce the [sample PDF](sample.pdf) with the following in
    ```latex
    % Front matter
    \begin{frontmatter}
-   	\abstract
+   	\abstract[200]		% Word count as optional argument
    	\titlepage
    	\dedication 		% Optional
    	\declaration
@@ -43,6 +43,12 @@ You should be able to produce the [sample PDF](sample.pdf) with the following in
    \end{frontmatter}
    ```
 
+   It is non-trivial to automate the abstract word counting in the compilation process. Alternatively, you can utilise [TeXcount](https://ctan.org/pkg/texcount) to count words of your abstract by running the command below, then insert the result into the argument of `\abstract`.
+
+   ```bash
+   texcount contents/frontmatter/abstract.tex -sum -1
+   ```
+
 6. Write your thesis chapters and appendices, then load the `.tex` files into the `chapters` and `appendices` environments, respectively, using the `\input` command (`\include` might cause pagination glitches). If there is no appendix in your thesis, you can remove the entire `appendices` environment from `main.tex`.
 
    ```latex
@@ -50,7 +56,7 @@ You should be able to produce the [sample PDF](sample.pdf) with the following in
    \begin{chapters}
    	\input{contents/chapters/introduction}
    	\input{contents/chapters/background}
-      \input{contents/chapters/more-to-follow}
+   	\input{contents/chapters/more-to-follow}
    \end{chapters}
    
    % Appendices
