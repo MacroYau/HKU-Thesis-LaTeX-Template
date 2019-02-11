@@ -6,7 +6,7 @@
 %%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{hkuthesis}[2019/02/07 v1.1.0 HKU MPhil and PhD Thesis Class]
+\ProvidesClass{hkuthesis}[2019/02/11 v1.2.0 HKU MPhil and PhD Thesis Class]
 \def\HKU{The University of Hong Kong}
 
 
@@ -166,6 +166,7 @@
 	\pagenumbering{roman}
 	\chapter{Declaration}
 	I declare that this thesis represents my own work, except where due acknowledgement is made, and that it has not been previously included in a thesis, dissertation or report submitted to this University or to any other institution for a degree, diploma or other qualifications.
+	\IfFileExists{contents/frontmatter/declaration}{\input{contents/frontmatter/declaration}}{}
 	\vspace{8em}
 	\begin{center}
 	\signature{Signed}{\@author}

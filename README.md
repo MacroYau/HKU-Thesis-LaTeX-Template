@@ -49,6 +49,8 @@ You should be able to produce the [sample PDF](sample.pdf) with the following in
    texcount contents/frontmatter/abstract.tex -sum -1
    ```
 
+   Additional content for the declaration page, for example, a list of previously published work, can be appended to the standard template via creating a `contents/frontmatter/declaration.tex` file.
+
 6. Write your thesis chapters and appendices, then load the `.tex` files into the `chapters` and `appendices` environments, respectively, using the `\input` command (`\include` might cause pagination glitches). If there is no appendix in your thesis, you can remove the entire `appendices` environment from `main.tex`.
 
    ```latex
